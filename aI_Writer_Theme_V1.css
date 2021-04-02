@@ -3404,23 +3404,7 @@ flex: 0 0 140px;
 }
 
 
-/* sorgt dafür, dass der textforkus gesetzt wird */
 
-div, textarea {
-  font-size: 1.4rem;
-}
-
-.rm-title-textarea {
-  font-size: 1.3rem;
-}
-
-div, textarea .roam-block-container rm-block rm-block--mine rm-block--open rm-not-focused block-bullet-view {
-  color: #B9B9B9 !important;
-}
-
-.rm-title-display {
-  color: #B9B9B9 !important;
-}
 
 /* verschiebt Text so dass es auf einer Linie ist */
 
@@ -3474,107 +3458,20 @@ div, textarea .roam-block-container rm-block rm-block--mine rm-block--open rm-no
 
 
 
-charset "UTF-8";
-/* RR change: MINIMIZE QUERIES: add any one of the following tags before the beginning of your query (in the same block):
-
-    #min-title = hides the page reference link / page title
-    #min-con = hides the contextual reference information (breadcrumbs)
-    #minimal = hides both the title and the context
-    #min-q = hides the query string, similar to legacy behavior
-    #min-all = hides everything — title, context, and query string
-    #min-todo = hides everything and makes a compact list
-
-inspired by Matt Goldenberg */
-[data-tag='minimal'] {
-  display: none !important;
-}
-[data-tag='minimal'] + .rm-query .rm-title-arrow-wrapper {
-  display: none !important;
-}
-[data-tag='minimal'] + .rm-query .zoom-mentions-view {
-  display: none !important;
-}
-[data-tag='minimal'] + .rm-query .rm-query-title::after {
-  content: ' #minimal';
-}
-
-[data-tag='min-title'] {
-  display: none !important;
-}
-[data-tag='min-title'] + .rm-query .rm-title-arrow-wrapper {
-  display: none !important;
-}
-[data-tag='min-title'] + .rm-query .rm-query-title::after {
-  content: ' #minimal';
-}
-
-[data-tag='min-con'] {
-  display: none !important;
-}
-[data-tag='min-con'] + .rm-query .zoom-mentions-view {
-  display: none !important;
-}
-[data-tag='min-con'] + .rm-query .rm-query-title::after {
-  content: ' #minimal';
-}
-
-[data-tag='min-q'] {
-  display: none !important;
-}
-[data-tag='min-q'] + .rm-query .rm-query-title {
-  display: none !important;
-}
-
-[data-tag='min-all'] {
-  display: none !important;
-}
-[data-tag='min-all'] + .rm-query .zoom-mentions-view {
-  display: none !important;
-}
-[data-tag='min-all'] + .rm-query .rm-title-arrow-wrapper {
-  display: none !important;
-}
-[data-tag='min-all'] + .rm-query .rm-query-title {
-  display: none !important;
-}
-
-[data-tag='min-todo'] {
-  display: none !important;
-}
-[data-tag='min-todo'] + .rm-query div[style*='margin-left: 12px;'] {
-  margin-left: 0 !important;
-}
-[data-tag='min-todo'] + .rm-query .zoom-mentions-view {
-  display: none !important;
-}
-[data-tag='min-todo'] + .rm-query .rm-title-arrow-wrapper {
-  display: none !important;
-}
-[data-tag='min-todo'] + .rm-query .rm-query-title {
-  display: none !important;
-}
-[data-tag='min-todo'] + .rm-query .rm-reference-item {
-  background: none;
-  margin-left: -12px;
-  margin-top: 3px;
-  padding: 0;
-}
-
-
 
 :root {
   
  --masonry-border: 1px solid rgb(240,240,240);
- --masonry-startHeight: 500px; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
- --masonry-startWidth: 500px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
+ --masonry-startHeight: 680px; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
+ --masonry-startWidth: 450px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
 
 } 
 
 .sidebar-content>div:not(.rm-dnd-separator) {
-  border-radius: 2px;
+  border-radius: 0px;
   //box-shadow: 2px 2px 2px rgba(236,236,236,0.75);
- 	box-shadow: 0 4px 5px 0 rgba(0,0,0,0.11), 0 6px 20px 0 rgba(0,0,0,0.04);
-
+	border: 0px;
+  border-left: 4px solid lightblue;
 }
 
 .roam-main {
@@ -3666,29 +3563,155 @@ inspired by Matt Goldenberg */
 }
 .rm-bullet__inner:hover {
   background-color: rgb(232,16,16);
-  transition: 0.1s;
-
+ transition:0s;
 
 }
 
 #right-sidebar .rm-block-main {
-width: calc(100% + 100px);
+width: calc(100%);
   }
 
-.newcursor {
-  position: absolute;
-    background: #07d7f5;
-      height: 28px;
-width: 12px;
-    border-right: 8px solid white;}
-.rm-block__input--active {
-  caret-color: transparent;
+
+
+
+
+
+
+/*Text Anpassungen */
+
+/* sorgt dafür, dass der textforkus gesetzt wird */
+
+div, textarea {
+  font-size: 1.14rem;
+}
+
+.rm-title-textarea {
+  font-size: 28px;
+}
+
+div, textarea .roam-block-container rm-block rm-block--mine rm-block--open rm-not-focused block-bullet-view {
+  color: #747474 !important;
+
+}
+
+.rm-title-display {
+  color: #747474 !important;
+}
+div, textarea {
+  color: black;
+}
+/*mic*/
+.rm-multibar {
+  border-color: #546A8A1C;
+}
+
+.rm-block--ghost>div>div>span>.simple-bullet-inner {
+  display: none;
+}
+
+/*List Feature*/
+
+
+.list .rm-block__children .rm-block__controls .rm-bullet__inner {
+background-color: #747474;
+}
+
+.rm-bullet--closed>span>span>.rm-bullet__inner {
+  border: white solid 4px !important;
+}
+
+/*Button Fixees*/
+
+#right-sidebar>.flex-h-box>.bp3-button.bp3-minimal.bp3-small {
+  position: relative;
+  opacity: 100% !important;
+  padding-left: 20px;
+  
+}
+.flex-h-box>.bp3-button {
+  opacity: 80% !important;
+}
+.rm-topbar {
+  background: transparent;
+}
+
+/*Roam Sideebar Styling*/
+
+
+
+.sidebar-content>div:not(.rm-dnd-separator) {
+border-right: 0px solid #D0C0F0;
+
+border-left: 3px solid #546A8A;
+background-color: rgba(42,44,90,0.004);
+  border-radius: 0px;
 }
 
 
 
+/*Multibar Fix*/
+
+.rm-zoom + div>div>.rm-level-1>.rm-multibar {
+    opacity: 0;
+}
+.rm-zoom + div>div>.rm-level-1>.rm-multibar:hover {
+    opacity: 1;
+}
 
 
 
+/*diagrams*/
+[data-page-links='["diagram"]']>div>div>span>div {
+color: transparent !important;
+}
+
+[data-page-links='["diagram"]']>div>div>span>div>span>div>button {
+  background: rgba(211,211,211,0.2);
+  border:none;
+  margin-bottom: 5px;
+}
+svg {
+  background-color: white !important;
+}
+g {
+}
+line {
+ opacity: 0.3;
+}
+g>rect {
+  stroke:rgb(175,175,175);
+  rx: 0;
+  ry: 0;
+
+  }
+g:hover>rect {
+  stroke: grey;
+  rx: 0;
+  }
+g>foreignObject {
+ overflow: visible;
+  padding-bottom: 0px;
+
+  min-height: 180px !important;
+  
+
+}
+g>foreignObject>div {
+
+}
+g>foreignObject>div>div {
+  background: white;
+	 color: rgb(67,67,67) !important;
+    text-align: center;
+
+}
 
 
+g>foreignObject>div>div>span>[data-link-title="Test"] {
+ font-size: 50px !important;
+}
+
+.rm-embed-container {
+  margin-right: 0;
+  text-align: left;
+}
